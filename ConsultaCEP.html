@@ -5,7 +5,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-    <h1>Consulte seu CEP</h1>
+    <h1>Busque seu CEP</h1>
 
     <label for="cep">CEP:</label>
     <input type="text" id="cep" placeholder="Digite o CEP">
@@ -21,14 +21,14 @@
 
             $.getJSON(url, function(data) {
                 if (!data.erro) {
-                    var resultado = '';
-                    resultado += '<p><strong>CEP:</strong> ' + data.cep + '</p>';
-                    resultado += '<p><strong>Logradouro:</strong> ' + data.logradouro + '</p>';
-                    resultado += '<p><strong>Complemento:</strong> ' + data.complemento + '</p>';
-                    resultado += '<p><strong>Bairro:</strong> ' + data.bairro + '</p>';
-                    resultado += '<p><strong>Cidade/UF:</strong> ' + data.localidade + '/' + data.uf + '</p>';
+                    var dados = '';
+                    dados += '<p><strong>CEP:</strong> ' + data.cep + '</p>';
+                    dados += '<p><strong>Logradouro:</strong> ' + data.logradouro + '</p>';
+                    dados += '<p><strong>Complemento:</strong> ' + data.complemento + '</p>';
+                    dados += '<p><strong>Bairro:</strong> ' + data.bairro + '</p>';
+                    dados += '<p><strong>Cidade/UF:</strong> ' + data.localidade + '/' + data.uf + '</p>';
 
-                    document.getElementById('exibir').innerHTML = resultado;
+                    document.getElementById('exibir').innerHTML = dados;
                 } else {
                     document.getElementById('exibir').innerHTML = '<p>CEP não encontrado.</p>';
                 }
